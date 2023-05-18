@@ -79,12 +79,7 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-cntent-center align-items-center">
-    <div class="video-layer">
-      <video poster ="" class=" " id="" playsinline autoplay muted loop >
-  
-        <source src="assets/img/King Abdullah Financial District Cinematic Drone Footage.mp4" type="video/mp4">
-    
-        </video></div>
+ 
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <!-- Slide 1 -->
@@ -93,7 +88,7 @@
           <h2 class="animate__animated animate__fadeInDown">
             Corporate   <span>Advisory </span> </h2>
 
-            <h3 class="animate__fadeInDown">
+            <h3 class="animate__fadeInDown  text-white">
               The leading consulting firm in the KSA </h3>
           <p class="animate__animated animate__fadeInUp">Rawasi advises corporate, financial and private investors on a range of capital optimization strategies with M&A advisory.</p>
           <a href="service1.html" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
@@ -193,7 +188,7 @@
 
        
       <div class="iframe   text-center d-flex justify-content-center">
-          <iframe src="Rawasi Profile 2020.pdf" frameborder="0" class="profile w-75 " id = "profile"></iframe>
+          <iframe src="Rawasi Profile 2020.pdf" frameborder="0" class="profile w-75 " id = "profile" "about:blank"></iframe>
        </div>
 
       </div>
@@ -635,12 +630,18 @@ profile.classList.toggle("d-block");
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/script.js"></script>
-  <script>
+  <!-- <script>
     var video = document.getElementsByTagName('video')[0];
     video.addEventListener('loadedmetadata', function() {
     video.play();
     });
-    </script>
+    </script> -->
+<script>
+$(document).ready(function() {
+  var video = document.getElementById("myVideo");
+  video.autoplay = true;
+});
+</script>
 
 </body>
 
