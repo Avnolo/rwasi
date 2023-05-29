@@ -116,6 +116,7 @@ ul{
 .img-logo img{
   width: 270px;
   max-height:130px;
+   object-fit: cover;
   /* background-color: red; */
 }
 #header .img-logo h1{
