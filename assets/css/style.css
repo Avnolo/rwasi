@@ -943,6 +943,11 @@ section {
   min-width: 100%;
   /* color: #fff; */
   animation: scroll-x var(--duration) linear infinite;
+    width: 100%;
+  overflow-x: hidden;
+  scroll-snap-type: x;
+  cursor: grab;
+  scroll-behavior: smooth;
 }
 
 
