@@ -632,6 +632,36 @@ function display(){
     video.play();
   });
 </script>
+
+  <script>
+const wrapper = document.querySelector('.marquee__group')
+
+let pressed = false
+let startX = 0
+
+wrapper.addEventListener('mousedown', function (e) {
+  pressed = true
+  startX = e.clientX
+  this.style.cursor = 'grabbing'
+})
+
+wrapper.addEventListener('mouseleave', function (e) {
+  pressed = false
+})
+
+window.addEventListener('mouseup', function (e) {
+  pressed = false
+  wrapper.style.cursor = 'grab'
+})
+
+wrapper.addEventListener('mousemove', function (e) {
+  if(!pressed) {
+    return
+  }
+
+  this.scrollLeft += startX - e.clientX
+})
+</script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/script.js"></script>
 
