@@ -20,9 +20,37 @@
       }
     }
 
-  /**
-   * Easy selector helper function
-   */
+
+    
+
+    const wrapper1 = document.querySelector('.wrapper1')
+
+let pressed = false
+let startX = 0
+
+wrapper1.addEventListener('mousedown', function (e) {
+  pressed = true
+  startX = e.clientX
+  this.style.cursor = 'grabbing'
+})
+
+wrapper1.addEventListener('mouseleave', function (e) {
+  pressed = false
+})
+
+window.addEventListener('mouseup', function (e) {
+  pressed = false
+  wrapper1.style.cursor = 'grab'
+})
+
+wrapper1.addEventListener('mousemove', function (e) {
+  if(!pressed) {
+    return
+  }
+
+  this.scrollLeft += startX - e.clientX
+})
+  
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -32,6 +60,43 @@
     }
   }
 
+
+  const wrapper = document.querySelector('.wrapper')
+
+  let pressed1 = false
+  let startX1 = 0
+  
+  wrapper.addEventListener('mousedown', function (e) {
+    pressed1 = true
+    startX1 = e.clientX
+    this.style.cursor = 'grabbing'
+  })
+  
+  wrapper.addEventListener('mouseleave', function (e) {
+    pressed1 = false
+  })
+  
+  window.addEventListener('mouseup', function (e) {
+    pressed1 = false
+    wrapper.style.cursor = 'grab'
+  })
+  
+  wrapper.addEventListener('mousemove', function (e) {
+    if(!pressed1) {
+      return
+    }
+  
+    this.scrollLeft += startX1 - e.clientX
+  })
+    
+    const select1 = (el, all = false) => {
+      el = el.trim()
+      if (all) {
+        return [...document.querySelectorAll(el)]
+      } else {
+        return document.querySelector(el)
+      }
+    }
   /**
    * Easy event listener function
    */
